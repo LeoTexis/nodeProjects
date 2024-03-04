@@ -1,5 +1,3 @@
-//mongodb+srv://leonardoleitetx:<password>@cluster0.sfifxsu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-
 import mongoose from "mongoose";
 import "dotenv/config"
 
@@ -12,4 +10,4 @@ async function dbConnect() {
     }
 } 
 
-export default dbConnect()
+export default dbConnect
