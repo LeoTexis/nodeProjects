@@ -15,6 +15,13 @@ class ProfileController  {
         }
     }
     
+    static async acessProfile (req, res) {
+
+    }
+    
+    static async updateProfile (req, res) {
+
+    }
 }
 
 export default ProfileController
