@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { version } from "mongoose";
 
 const { Schema } = mongoose
 
@@ -22,12 +22,11 @@ const profileSchema = new Schema({
     },
     length: {
         type: String,
-        required: true
     },
     image: {
         type: String,
     },
-})
+}, { versionKey: false})
 
 const profile = mongoose.model("aluminum", profileSchema)
 
