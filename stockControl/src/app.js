@@ -1,12 +1,15 @@
 import express from "express"
 import dbConnect from "../conn.js"
-import profile from "./models/profilesModels.js"
+import routes from "../routers/index.js"
 
 //dbconnection
 dbConnect()
 
 
 
-const app = express()
 
-export default express()
+const app = express()
+app.use(express.json())
+routes(app)
+
+export default app

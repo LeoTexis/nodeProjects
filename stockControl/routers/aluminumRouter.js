@@ -2,9 +2,13 @@ import express from "express"
 import ProfileController from "../src/controllers/aluminumControlle.js"
 
 
-const router = express.Router()
+const routes = express.Router()
 
-router.get("/", ProfileController.listOfProfile)
-router.post("/", ProfileController.registerProfile)
+routes.get("/", ProfileController.listOfProfile)
+routes.get("/:id", ProfileController.acessProfileById)
+routes.post("/", ProfileController.registerProfile)
+routes.put("/:id", ProfileController.updateProfile)
+routes.delete("/:id", ProfileController.deleteProfile)
 
-export default router
+
+export default routes
