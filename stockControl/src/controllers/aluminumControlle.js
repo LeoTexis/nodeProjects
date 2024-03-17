@@ -1,12 +1,18 @@
 import profile from "../models/profilesModels.js";
 
+<<<<<<< Updated upstream
 
 class ProfileController  {
     static async listOfProfile(req, res, next){
+=======
+class ProfileController  {
+    static async listOfProfile(req, res){
+>>>>>>> Stashed changes
         const listProfile = await profile.find({});
         res.status(200).json(listProfile)
     }
 
+<<<<<<< Updated upstream
     static async acessProfileById (req, res, next) {
         try {
             throw new Error()
@@ -50,6 +56,14 @@ class ProfileController  {
         } catch (err) {
             next(err)
             // res.status(500).json({ message : `${err.message} - delete failure`})
+=======
+    static async registerProfile (req, res) {
+        try {
+            const newProfile = await profile.create(req.body)
+            res.status(201).json({message: "Profile created!", profile : newProfile})
+        } catch (err) {
+            res.status(500).json({message: `${err.message} - Error creating profile`})
+>>>>>>> Stashed changes
         }
     }
 }
