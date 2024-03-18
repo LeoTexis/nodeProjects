@@ -2,6 +2,7 @@ import express from "express"
 import dbConnect from "../conn.js"
 import routes from "../routers/index.js"
 import errorHandlers from "./middlewares/errors.js"
+import notFoundError from "./middlewares/notFound.js"
 
 
 //dbconnection
@@ -21,7 +22,7 @@ app.use(express.json())
 routes(app)
 
 
-
+app.use(notFoundError)
 app.use(errorHandlers)
 
 export default app

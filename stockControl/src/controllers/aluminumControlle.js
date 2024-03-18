@@ -9,7 +9,6 @@ class ProfileController  {
 
     static async acessProfileById (req, res, next) {
         try {
-throw new Error()
             const id = req.params.id
             const idProfile = await profile.findById(id)
             res.status(200).json(idProfile)
@@ -20,7 +19,6 @@ throw new Error()
     }
 
     static async registerProfile (req, res, next) {
-        console.log(req.body)
         try {
             const data = req.body
             const newProfile = await profile.create(data)
