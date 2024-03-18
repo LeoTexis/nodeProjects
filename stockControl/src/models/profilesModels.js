@@ -1,6 +1,5 @@
 import mongoose, { version } from "mongoose";
 
-const { Schema } = mongoose
 
 const profileSchema = new Schema({
     id: { 
@@ -28,6 +27,6 @@ const profileSchema = new Schema({
     },
 }, { versionKey: false})
 
-const profile = mongoose.model("aluminum", profileSchema)
+const profile = mongoose.model("aluminums", profileSchema)
 
 export default profile
