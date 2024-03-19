@@ -1,8 +1,8 @@
 import express from "express"
 import ProfileController from "../src/controllers/aluminumControlle.js"
 
-
 const routes = express.Router()
+
 
 routes.get("/", ProfileController.listOfProfile)
 routes.get("/search", ProfileController.acessProfileByQuery)
