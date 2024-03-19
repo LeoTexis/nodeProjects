@@ -1,15 +1,31 @@
-import mongoose from "mongoose";
+import mongoose, { version } from "mongoose";
 
 
-const profileSchema = new mongoose.Schema({
-    id: { type: mongoose.Schema.Types.ObjectId},
-    codes: { type: String, required: true},
-    amount: {type: String, required: true},
-    min: { type: String },
-    linearWeight: { type: String},
-    length: {type: String, required: true},
-    image: {type: String}
-}, { versionKey: false } )
+const profileSchema = new Schema({
+    id: { 
+        type: mongoose.Schema.Types.ObjectId
+    },
+    codes: {
+        type: String,
+        required: true
+    },
+    amount: {
+        type: String,
+        required: true
+    },
+    min: {
+        type: String,
+    },
+    linearWeight: {
+        type: String,
+    },
+    length: {
+        type: String,
+    },
+    image: {
+        type: String,
+    },
+}, { versionKey: false})
 
 const profile = mongoose.model("aluminums", profileSchema)
 

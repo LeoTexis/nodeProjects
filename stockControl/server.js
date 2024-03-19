@@ -6,3 +6,8 @@ const PORT = 3000
 app.listen(PORT,()=>{
     console.log("servidor rodando")
 })
+
+
+app.get("/", (req,res)=>{
+    res.send("starting")
+})
