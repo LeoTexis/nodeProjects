@@ -47,6 +47,17 @@ class ProfileController  {
             res.status(500).json({ message : `${err.message} - delete failure`})
         }
     }
+
+    static async acessProfileByQuery (req, res) {
+        const profileCode = req.query.codes
+
+        try {
+            const profileByName = await profile.find({codes: profileCode})
+            res.status(200).json(profileByName)
+        } catch(err) {
+            res.status(500).json({message : "search failure!"})
+        }
+    }
 }
 
 export default ProfileController
