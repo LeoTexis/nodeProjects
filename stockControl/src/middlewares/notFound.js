@@ -1,8 +1,9 @@
-import NotFound from "../errors/notFound.js"
+import RootError from "../errors/rootErrors.js"
 
-function notFoundError(req, res, next) {
-    const error404 = new NotFound()
-    next(error404)
+class NotFound extends RootError {
+    constructor(){
+        super(`Page not found`, 404)
+    }
 }
 
-export default notFoundError
+export default NotFound

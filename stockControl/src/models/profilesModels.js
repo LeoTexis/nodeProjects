@@ -1,4 +1,5 @@
-import mongoose, { version } from "mongoose";
+import mongoose from "mongoose";
+import { Schema } from "mongoose";
 
 
 const profileSchema = new Schema({

@@ -14,7 +14,6 @@ class ProfileController  {
             res.status(200).json(idProfile)
         } catch (err) {
             next(err)
-            // res.status(400).json({ message: `${err.message} - request failure`})
         }
     }
 
@@ -25,7 +24,6 @@ class ProfileController  {
             res.status(201).json({message: "Profile created!", profile : newProfile})
         } catch (err) {
             next(err)
-            // res.status(500).json({message: `${err.message} - Error creating profile`})
         }
     }
     
@@ -36,7 +34,6 @@ class ProfileController  {
             res.status(201).json({ message: "Updated profile"})
         } catch (err) {
             next(err)
-            // res.status(500).json({message : `${err.message} - update failure`})
         }
     }
 
@@ -47,7 +44,6 @@ class ProfileController  {
             res.status(200).json({ message : `Profile deleted!`})
         } catch (err) {
             next(err)
-            // res.status(500).json({ message : `${err.message} - delete failure`})
         }
     }
 
@@ -57,6 +53,7 @@ class ProfileController  {
         try {
             const profileByName = await profile.find({codes: profileCode})
             res.status(200).json(profileByName)
+            console.log(profileByName)
         } catch(err) {
             res.status(500).json({message : "search failure!"})
         }
